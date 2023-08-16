@@ -77,7 +77,7 @@ def get_data(url="https://api.ouedkniss.com/graphql",query_path = Path("config/d
     json_file = open(json_file_path, "a")  # append mode
 
     # while i <= lastPage:
-    while i <= 2:
+    while i <= 30:
 
         result = client.execute(query,operation_name=operationName,variable_values=def_var_page(i))
         datas.append(result['search']['announcements']['data'])
@@ -92,3 +92,6 @@ def get_data(url="https://api.ouedkniss.com/graphql",query_path = Path("config/d
 
 if __name__ == "__main__":
     get_data()
+    
+    
+# Sauvegarder les fichier json par mois 
