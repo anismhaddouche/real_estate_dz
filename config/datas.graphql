@@ -1,0 +1,67 @@
+query SearchQueryWithoutFilters($q: String, $filter: SearchFilterInput, $mediaSize: MediaSize) {
+  search(q: $q, filter: $filter) {
+	announcements {
+	  data {
+		...AnnouncementContent
+		smallDescription {
+		  valueText
+		}
+	  }
+	  paginatorInfo {
+		  hasMorePages
+	  }
+	}
+  }
+}
+fragment AnnouncementContent on Announcement {
+  id
+  title
+  slug
+  description
+  showAnalytics
+  createdAt: refreshedAt
+  isFromStore
+  category {
+	name
+  }
+  likeCount
+  description
+  status
+  cities {
+	id
+	name
+	slug
+	region {
+	  id
+	  name
+	  slug 
+	}
+  }
+  medias(size: $mediaSize) {
+	mediaUrl
+  }
+  specs {
+	specification {
+	  label
+	  codename
+	  type
+	}
+	value
+	valueText
+  }
+  store {
+	id
+	name
+	slug
+	imageUrl
+  }
+  user {
+	id
+  }
+  price
+  pricePreview
+  priceUnit
+  oldPrice
+  priceType
+  exchangeType
+}
