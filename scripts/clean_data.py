@@ -3,6 +3,8 @@ from pathlib import Path
 import pandas as pd
 import json
 
+
+
 def get_commune(x: list):
     """get the commune column"""
     # x = list_to_dict(x)
@@ -12,6 +14,7 @@ def get_commune(x: list):
         commune = None
     return commune
 
+
 def get_wilaya(x: list):
     """get the wilaya column"""
     # x = list_to_dict(x)
@@ -20,6 +23,7 @@ def get_wilaya(x: list):
     except:
         wilaya = None
     return wilaya
+
 
 def get_medias(column: pd.Series) -> pd.Series:
     """
@@ -37,6 +41,7 @@ def get_medias(column: pd.Series) -> pd.Series:
                 media_raw.append(None)
         media_all.append(media_raw)
     return pd.Series(media_all)
+
 
 def get_specs(column: pd.Series) -> pd.DataFrame:
     """
@@ -68,9 +73,11 @@ def clean_priceType(priceType: pd.Series) -> pd.Series:
     """Convert to a categorical type"""
     return priceType.astype("category")
 
+
 def clean_priceUnit(priceUnit: pd.Series) -> pd.Series:
     """Convert to a categorical type"""
     return priceUnit.astype("category")
+
 
 def clean_id(id: pd.Series) -> pd.Series:
     """convert the id to int"""
@@ -88,9 +95,11 @@ def clean_slug(slug: pd.Series) -> pd.Series:
     """Convert to a string type"""
     return slug.astype("string")
 
+
 def clean_wilaya(wilaya: pd.Series) -> pd.Series:
     """Convert to a string type"""
     return wilaya.astype("category")
+
 
 def clean_commune(commune: pd.Series) -> pd.Series:
     """Convert to a string type"""
@@ -99,6 +108,7 @@ def clean_commune(commune: pd.Series) -> pd.Series:
 def clean_location_duree(location_duree: pd.Series) -> pd.Series:
     """Convert to a int"""
     return location_duree.str.extract("(\\d)").astype("Int64")
+
 
 def clean_superficie(superficie: pd.Series) -> pd.Series:
     """Convert to int ...."""
@@ -128,17 +138,22 @@ def clean_etages(etages: pd.Series) -> pd.Series:
     #TODO: prendre en compte RDC
     return etages.str.extract("(\\d{1,2})").astype("Int64")
 
+
 def clean_sale_by_real_estate_agent(sale_by_real_estate_agent: pd.Series) -> pd.Series:
     """" Convert to a bool type """
     return sale_by_real_estate_agent.astype("bool")
 
+
 def clean_property_payment_conditions(clean_property_payment_conditions: pd.Series) -> pd.Series:
     """desc """
     return clean_property_payment_conditions.astype('category')
- 
+
+
 def clean_medias(medias: pd.Series) -> pd.Series:
     """desc"""
     return medias
+
+
 def clean_description(description: pd.Series) -> pd.Series:
     return description.astype("string")
 
@@ -147,63 +162,53 @@ def clean_price(price: pd.Series) -> pd.Series:
     return price
 
 
-
-@task()
-def get_asset(raw_data_path = Path("data/0_raw_data.json")) -> pd.DataFrame:
+@flow()
+def clean_data(raw_data_path = Path("data/0_raw_data.json")) -> pd.DataFrame:
     """Preprocesses the data of announcements.
 
     Args:
         data: Raw data.
     Returns:
-        asset: Intermediate data as a table
+        data: Intermediate data as a table
 
     """
     # Convert Data, which is a list of lists, into one flatten list
     with open(raw_data_path, 'r') as json_file:
         raw_data = json.load(json_file)
 
-    asset = pd.DataFrame([item for sublist in raw_data for item in sublist])
+    data = pd.DataFrame([item for sublist in raw_data for item in sublist])
     # Convert each raw of 'category', which is a dict (eg : {"name": "Appartement"}), to a sting  (eg :"Appartement")
-    category = asset["category"].apply(lambda x: x["name"])
+    category = data["category"].apply(lambda x: x["name"])
     # Get the commune
-    commune = asset["cities"].apply(lambda x: get_commune(x)).rename("commune")
+    commune = data["cities"].apply(lambda x: get_commune(x)).rename("commune")
     # Get the wilaya
-    wilaya = asset["cities"].apply(lambda x: get_wilaya(x)).rename("wilaya")
+    wilaya = data["cities"].apply(lambda x: get_wilaya(x)).rename("wilaya")
     # Get the Store name
-    store = asset["store"].apply(lambda x: x.get("slug") if x is not None else None)
+    store = data["store"].apply(lambda x: x.get("slug") if x is not None else None)
     # Get medias (urls)
-    medias = get_medias(asset["medias"])
+    medias = get_medias(data["medias"])
     # Get some specification in a DataFrame
-    specs = get_specs(asset["specs"])
+    specs = get_specs(data["specs"])
     specs["medias"] = medias
     # Create the outout DataFrame
     df = pd.DataFrame(
         [
-            asset["id"],
+            data["id"],
             category,
-            asset["slug"],
-            asset["description"],
-            asset["price"],
-            asset["priceType"],
-            asset["priceUnit"],
+            data["slug"],
+            data["description"],
+            data["price"],
+            data["priceType"],
+            data["priceUnit"],
             wilaya,
             commune,
-            asset["createdAt"],
-            asset["likeCount"],
-            asset["isFromStore"],
+            data["createdAt"],
+            data["likeCount"],
+            data["isFromStore"],
             store,
         ]
     ).T
-    asset = df.join(specs)
-    return asset
-
-
-
-@flow()
-def clean_asset() -> pd.DataFrame:
-    """Clean each column according to its specific clean function"""
-    
-    asset = get_asset()
+    data = df.join(specs)
     
     jobs = {
         "priceType": clean_priceType,
@@ -230,15 +235,14 @@ def clean_asset() -> pd.DataFrame:
     }
 
     for column, func in jobs.items():
-        asset[column] = func(asset[column])
-    asset_cleaned = asset
-    asset_cleaned.to_parquet("data/1_cleaned_data.parquet")
+        data[column] = func(data[column])
+    data.to_parquet("data/1_cleaned_data.parquet")
     return None
 
 
 
 if __name__ == "__main__":
-    clean_asset()
+    clean_data()
     
     
 # @flow()

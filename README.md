@@ -5,3 +5,8 @@ This repository contains the final project of the MLOps Zoomcamp 2023, offered b
 ## Project description 
 
 ## Tips for improvement 
+
+## TODO : 
+Revoir les videos sur prefect 
+Entrainer mon modéle de machine learning 
+Créer un dashboard 
