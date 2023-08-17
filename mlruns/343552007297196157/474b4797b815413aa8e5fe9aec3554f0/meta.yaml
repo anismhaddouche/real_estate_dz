@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/343552007297196157/474b4797b815413aa8e5fe9aec3554f0/artifacts
+end_time: 1692282106293
+entry_point_name: ''
+experiment_id: '343552007297196157'
+lifecycle_stage: active
+run_id: 474b4797b815413aa8e5fe9aec3554f0
+run_name: funny-ant-509
+run_uuid: 474b4797b815413aa8e5fe9aec3554f0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692282100923
+status: 3
+tags: []
+user_id: anis

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/343552007297196157/65a907e81d824bac95e1f17b4e7e6a9c/artifacts
+end_time: 1692282162258
+entry_point_name: ''
+experiment_id: '343552007297196157'
+lifecycle_stage: active
+run_id: 65a907e81d824bac95e1f17b4e7e6a9c
+run_name: handsome-bat-206
+run_uuid: 65a907e81d824bac95e1f17b4e7e6a9c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692282151775
+status: 3
+tags: []
+user_id: anis

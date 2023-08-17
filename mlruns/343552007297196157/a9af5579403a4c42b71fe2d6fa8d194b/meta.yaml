@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/343552007297196157/a9af5579403a4c42b71fe2d6fa8d194b/artifacts
+end_time: 1692282253909
+entry_point_name: ''
+experiment_id: '343552007297196157'
+lifecycle_stage: active
+run_id: a9af5579403a4c42b71fe2d6fa8d194b
+run_name: bouncy-owl-80
+run_uuid: a9af5579403a4c42b71fe2d6fa8d194b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692282250823
+status: 3
+tags: []
+user_id: anis

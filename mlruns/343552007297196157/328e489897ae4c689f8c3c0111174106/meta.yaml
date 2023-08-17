@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/343552007297196157/328e489897ae4c689f8c3c0111174106/artifacts
+end_time: 1692282100918
+entry_point_name: ''
+experiment_id: '343552007297196157'
+lifecycle_stage: active
+run_id: 328e489897ae4c689f8c3c0111174106
+run_name: sedate-grub-559
+run_uuid: 328e489897ae4c689f8c3c0111174106
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692282091403
+status: 3
+tags: []
+user_id: anis

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/343552007297196157/0348773015734a1bb4b01006959a0bd4/artifacts
+end_time: 1692282133945
+entry_point_name: ''
+experiment_id: '343552007297196157'
+lifecycle_stage: active
+run_id: 0348773015734a1bb4b01006959a0bd4
+run_name: adorable-duck-712
+run_uuid: 0348773015734a1bb4b01006959a0bd4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692282124274
+status: 3
+tags: []
+user_id: anis

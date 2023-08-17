@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/343552007297196157/2e8484ce8f8f4dcb986470f45d4bb898/artifacts
+end_time: 1692282342416
+entry_point_name: ''
+experiment_id: '343552007297196157'
+lifecycle_stage: active
+run_id: 2e8484ce8f8f4dcb986470f45d4bb898
+run_name: big-auk-871
+run_uuid: 2e8484ce8f8f4dcb986470f45d4bb898
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692282336103
+status: 3
+tags: []
+user_id: anis

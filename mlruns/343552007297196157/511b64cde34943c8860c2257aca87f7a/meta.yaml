@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/343552007297196157/511b64cde34943c8860c2257aca87f7a/artifacts
+end_time: 1692282317852
+entry_point_name: ''
+experiment_id: '343552007297196157'
+lifecycle_stage: active
+run_id: 511b64cde34943c8860c2257aca87f7a
+run_name: able-seal-736
+run_uuid: 511b64cde34943c8860c2257aca87f7a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692282315193
+status: 3
+tags: []
+user_id: anis

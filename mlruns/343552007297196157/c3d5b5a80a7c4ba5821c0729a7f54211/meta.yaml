@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/343552007297196157/c3d5b5a80a7c4ba5821c0729a7f54211/artifacts
+end_time: 1692282244627
+entry_point_name: ''
+experiment_id: '343552007297196157'
+lifecycle_stage: active
+run_id: c3d5b5a80a7c4ba5821c0729a7f54211
+run_name: beautiful-slug-842
+run_uuid: c3d5b5a80a7c4ba5821c0729a7f54211
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692282243211
+status: 3
+tags: []
+user_id: anis

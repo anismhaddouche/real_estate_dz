@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/343552007297196157/8dcac349a57143e29a9754295dd23e97/artifacts
+end_time: 1692282326811
+entry_point_name: ''
+experiment_id: '343552007297196157'
+lifecycle_stage: active
+run_id: 8dcac349a57143e29a9754295dd23e97
+run_name: valuable-snake-894
+run_uuid: 8dcac349a57143e29a9754295dd23e97
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692282317860
+status: 3
+tags: []
+user_id: anis

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/343552007297196157/bf4da9ece7144a4a8596957ab61b7667/artifacts
+end_time: 1692282180715
+entry_point_name: ''
+experiment_id: '343552007297196157'
+lifecycle_stage: active
+run_id: bf4da9ece7144a4a8596957ab61b7667
+run_name: bald-lamb-621
+run_uuid: bf4da9ece7144a4a8596957ab61b7667
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692282162262
+status: 3
+tags: []
+user_id: anis

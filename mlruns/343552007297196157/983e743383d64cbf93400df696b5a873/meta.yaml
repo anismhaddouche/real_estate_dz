@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/343552007297196157/983e743383d64cbf93400df696b5a873/artifacts
+end_time: 1692282142143
+entry_point_name: ''
+experiment_id: '343552007297196157'
+lifecycle_stage: active
+run_id: 983e743383d64cbf93400df696b5a873
+run_name: vaunted-tern-794
+run_uuid: 983e743383d64cbf93400df696b5a873
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692282133949
+status: 3
+tags: []
+user_id: anis

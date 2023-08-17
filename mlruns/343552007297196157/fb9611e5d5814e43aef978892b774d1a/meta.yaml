@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/343552007297196157/fb9611e5d5814e43aef978892b774d1a/artifacts
+end_time: 1692282363756
+entry_point_name: ''
+experiment_id: '343552007297196157'
+lifecycle_stage: active
+run_id: fb9611e5d5814e43aef978892b774d1a
+run_name: nimble-swan-734
+run_uuid: fb9611e5d5814e43aef978892b774d1a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692282355030
+status: 3
+tags: []
+user_id: anis

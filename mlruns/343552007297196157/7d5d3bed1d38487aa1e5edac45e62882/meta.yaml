@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/343552007297196157/7d5d3bed1d38487aa1e5edac45e62882/artifacts
+end_time: 1692282115208
+entry_point_name: ''
+experiment_id: '343552007297196157'
+lifecycle_stage: active
+run_id: 7d5d3bed1d38487aa1e5edac45e62882
+run_name: smiling-tern-392
+run_uuid: 7d5d3bed1d38487aa1e5edac45e62882
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692282106296
+status: 3
+tags: []
+user_id: anis

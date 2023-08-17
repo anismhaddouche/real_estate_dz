@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/343552007297196157/f9ba124084464ffd8d3785c0954a1a1b/artifacts
+end_time: 1692282198899
+entry_point_name: ''
+experiment_id: '343552007297196157'
+lifecycle_stage: active
+run_id: f9ba124084464ffd8d3785c0954a1a1b
+run_name: redolent-sponge-8
+run_uuid: f9ba124084464ffd8d3785c0954a1a1b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692282198280
+status: 3
+tags: []
+user_id: anis

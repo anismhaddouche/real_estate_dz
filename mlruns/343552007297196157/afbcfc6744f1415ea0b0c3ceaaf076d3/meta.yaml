@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/343552007297196157/afbcfc6744f1415ea0b0c3ceaaf076d3/artifacts
+end_time: 1692282289060
+entry_point_name: ''
+experiment_id: '343552007297196157'
+lifecycle_stage: active
+run_id: afbcfc6744f1415ea0b0c3ceaaf076d3
+run_name: abrasive-tern-847
+run_uuid: afbcfc6744f1415ea0b0c3ceaaf076d3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692282280654
+status: 3
+tags: []
+user_id: anis

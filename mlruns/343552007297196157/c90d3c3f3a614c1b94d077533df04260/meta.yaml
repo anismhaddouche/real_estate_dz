@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/343552007297196157/c90d3c3f3a614c1b94d077533df04260/artifacts
+end_time: 1692282225006
+entry_point_name: ''
+experiment_id: '343552007297196157'
+lifecycle_stage: active
+run_id: c90d3c3f3a614c1b94d077533df04260
+run_name: thundering-roo-805
+run_uuid: c90d3c3f3a614c1b94d077533df04260
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692282224719
+status: 3
+tags: []
+user_id: anis

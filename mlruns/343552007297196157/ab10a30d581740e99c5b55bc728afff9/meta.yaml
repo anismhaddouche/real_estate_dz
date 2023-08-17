@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/343552007297196157/ab10a30d581740e99c5b55bc728afff9/artifacts
+end_time: 1692282272476
+entry_point_name: ''
+experiment_id: '343552007297196157'
+lifecycle_stage: active
+run_id: ab10a30d581740e99c5b55bc728afff9
+run_name: loud-dog-641
+run_uuid: ab10a30d581740e99c5b55bc728afff9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692282271559
+status: 3
+tags: []
+user_id: anis

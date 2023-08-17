@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/343552007297196157/de412d3bc36b43118a2b5175fb3db5b2/artifacts
+end_time: 1692282198276
+entry_point_name: ''
+experiment_id: '343552007297196157'
+lifecycle_stage: active
+run_id: de412d3bc36b43118a2b5175fb3db5b2
+run_name: salty-roo-6
+run_uuid: de412d3bc36b43118a2b5175fb3db5b2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692282190134
+status: 3
+tags: []
+user_id: anis
