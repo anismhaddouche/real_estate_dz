@@ -1,12 +1,12 @@
 aliases: []
-creation_timestamp: 1692283189819
+creation_timestamp: 1692366545378
 current_stage: None
 description: ''
-last_updated_timestamp: 1692283189819
+last_updated_timestamp: 1692366545378
 name: xgboost
-run_id: e0b7272d10ba440abce75e70e0d7e87a
+run_id: 0bca94481fa84654ae96435f3adc5f6c
 run_link: ''
-source: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/343552007297196157/e0b7272d10ba440abce75e70e0d7e87a/artifacts/models_mlflow
+source: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/367320885122012114/0bca94481fa84654ae96435f3adc5f6c/artifacts/models_mlflow
 status: READY
 status_message: null
 user_id: null

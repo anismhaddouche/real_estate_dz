@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/367320885122012114/dab3d78903ad4dbcb16bb41125af62ea/artifacts
+end_time: 1692365147630
+entry_point_name: ''
+experiment_id: '367320885122012114'
+lifecycle_stage: active
+run_id: dab3d78903ad4dbcb16bb41125af62ea
+run_name: receptive-horse-970
+run_uuid: dab3d78903ad4dbcb16bb41125af62ea
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692365138664
+status: 3
+tags: []
+user_id: anis

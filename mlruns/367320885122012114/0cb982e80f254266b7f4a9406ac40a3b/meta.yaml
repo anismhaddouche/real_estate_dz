@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/367320885122012114/0cb982e80f254266b7f4a9406ac40a3b/artifacts
+end_time: 1692364575080
+entry_point_name: ''
+experiment_id: '367320885122012114'
+lifecycle_stage: active
+run_id: 0cb982e80f254266b7f4a9406ac40a3b
+run_name: redolent-bird-265
+run_uuid: 0cb982e80f254266b7f4a9406ac40a3b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692364564379
+status: 3
+tags: []
+user_id: anis

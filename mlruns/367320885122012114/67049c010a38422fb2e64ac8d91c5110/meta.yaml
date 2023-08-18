@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/367320885122012114/67049c010a38422fb2e64ac8d91c5110/artifacts
+end_time: 1692364766222
+entry_point_name: ''
+experiment_id: '367320885122012114'
+lifecycle_stage: active
+run_id: 67049c010a38422fb2e64ac8d91c5110
+run_name: rogue-newt-793
+run_uuid: 67049c010a38422fb2e64ac8d91c5110
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692364749201
+status: 3
+tags: []
+user_id: anis

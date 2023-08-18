@@ -36,6 +36,11 @@ def feature_engineering(path_cleaned_data = Path("data/1_cleaned_data.parquet"))
     # Prepare data 
     data_cleaned = pd.read_parquet(path_cleaned_data)
 
+    ### Keep only annoncement with "priceUnit == MILLION"
+    data_cleaned = data_cleaned[data_cleaned["priceUnit"] == "MILLION"]
+    
+    ### Delete ligne where the price == 1
+    data_cleaned = data_cleaned[(data_cleaned["price"] > 1 )]
     ### Choose the target and features
     target = ["price"]
     features_num = [ "location_duree","superficie","pieces","etages"]
@@ -63,9 +68,8 @@ def feature_engineering(path_cleaned_data = Path("data/1_cleaned_data.parquet"))
             data.loc[outliers, feature] = replace_with
         else:
             data = data[~outliers]
+
     return data 
-
-
 
 
 
@@ -82,14 +86,14 @@ def prepare_data(data : pd.DataFrame ) ->   (scipy.sparse._csr.csr_matrix,  scip
     # Calculate the number of rows for training and validation
     num_rows = data.shape[0]
     num_rows_train = int(0.8 * num_rows)
-    num_rows_val = num_rows - num_rows_train
+    # num_rows_val = num_rows - num_rows_train
 
     # Split the DataFrame into training and validation
     df_train = data[:num_rows_train]
     df_val = data[num_rows_train:]
 
-    categorical  = ["category",	"wilaya",	"commune"]
-    numerical = ["location_duree",	"superficie",	"pieces",	"etages","price"]
+    categorical  = ["category",	"commune"]
+    numerical = ["location_duree",	"superficie",	"pieces",	"etages"]
 
     # Vectorize categorical values in order to prepare data for xgboost
     dv = DictVectorizer()
@@ -154,6 +158,7 @@ def found_best_model(X_train:scipy.sparse._csr.csr_matrix, X_val:scipy.sparse._c
     #     'seed': 42
     # }
 
+
 # Saving best results  
     best_params = fmin(fn=lambda params: objective(params, train, valid,y_val),
             space=search_space, algo=tpe.suggest, max_evals=50, trials=Trials())
@@ -205,7 +210,7 @@ def main_flow() -> None:
 
     # MLflow settings
     # mlflow.set_tracking_uri("sqlite:///mlflow.db")
-f    mlflow.set_experiment("project-train-best-model-experiment")
+    mlflow.set_experiment("project-train-best-model-experiment")
     # Prepare data 
     data = feature_engineering(path_cleaned_data = Path("data/1_cleaned_data.parquet")) 
     X_train, X_val, y_train, y_val, dv = prepare_data(data)

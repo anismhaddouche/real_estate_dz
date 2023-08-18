@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/367320885122012114/e8904299ea734865b868e19a17452a0f/artifacts
+end_time: 1692364475238
+entry_point_name: ''
+experiment_id: '367320885122012114'
+lifecycle_stage: active
+run_id: e8904299ea734865b868e19a17452a0f
+run_name: carefree-dolphin-128
+run_uuid: e8904299ea734865b868e19a17452a0f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692364470938
+status: 3
+tags: []
+user_id: anis

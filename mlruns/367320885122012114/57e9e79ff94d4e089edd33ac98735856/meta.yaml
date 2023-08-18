@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/367320885122012114/57e9e79ff94d4e089edd33ac98735856/artifacts
+end_time: 1692364645920
+entry_point_name: ''
+experiment_id: '367320885122012114'
+lifecycle_stage: active
+run_id: 57e9e79ff94d4e089edd33ac98735856
+run_name: luminous-grub-887
+run_uuid: 57e9e79ff94d4e089edd33ac98735856
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692364630121
+status: 3
+tags: []
+user_id: anis

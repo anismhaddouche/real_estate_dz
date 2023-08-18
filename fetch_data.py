@@ -76,8 +76,8 @@ def get_data(url="https://api.ouedkniss.com/graphql",query_path = Path("config/d
     datas = []
     json_file = open(json_file_path, "a")  # append mode
 
-    while i <= lastPage:
-    # while i <= 30:
+    # while i <= lastPage:
+    while i <= 300:
 
         result = client.execute(query,operation_name=operationName,variable_values=def_var_page(i))
         datas.append(result['search']['announcements']['data'])

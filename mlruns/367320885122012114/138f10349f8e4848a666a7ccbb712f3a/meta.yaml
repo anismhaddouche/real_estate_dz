@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/367320885122012114/138f10349f8e4848a666a7ccbb712f3a/artifacts
+end_time: 1692364749152
+entry_point_name: ''
+experiment_id: '367320885122012114'
+lifecycle_stage: active
+run_id: 138f10349f8e4848a666a7ccbb712f3a
+run_name: judicious-gnu-366
+run_uuid: 138f10349f8e4848a666a7ccbb712f3a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692364701996
+status: 3
+tags: []
+user_id: anis

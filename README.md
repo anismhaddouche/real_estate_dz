@@ -5,6 +5,9 @@ This repository contains the final project of the MLOps Zoomcamp 2023, offered b
 ## Project description 
 
 ## Tips for improvement 
+### Improve the prediction model (xgboost)
+    * Get more data (actually we have 7937 announcements)
+    * Improve the feature engineering 
 
 
 ## Gabarit 
@@ -29,6 +32,5 @@ This repository contains the final project of the MLOps Zoomcamp 2023, offered b
         - demander à adel de mettre une description plus claire 
     """
 ## TODO : 
-Revoir les videos sur prefect 
-Entrainer mon modéle de machine learning 
 Créer un dashboard 
+suivre ce lien pour faire des prédiction https://github.com/DataTalksClub/mlops-zoomcamp/blob/main/04-deployment/batch/score.ipynb`

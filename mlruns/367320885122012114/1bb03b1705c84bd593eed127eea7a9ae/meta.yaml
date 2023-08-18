@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/367320885122012114/1bb03b1705c84bd593eed127eea7a9ae/artifacts
+end_time: 1692364988348
+entry_point_name: ''
+experiment_id: '367320885122012114'
+lifecycle_stage: active
+run_id: 1bb03b1705c84bd593eed127eea7a9ae
+run_name: able-eel-831
+run_uuid: 1bb03b1705c84bd593eed127eea7a9ae
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692364972830
+status: 3
+tags: []
+user_id: anis

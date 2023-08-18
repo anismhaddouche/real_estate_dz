@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/367320885122012114/8bf5dc9773964edd8098510d2379c838/artifacts
+end_time: 1692364795084
+entry_point_name: ''
+experiment_id: '367320885122012114'
+lifecycle_stage: active
+run_id: 8bf5dc9773964edd8098510d2379c838
+run_name: colorful-bug-710
+run_uuid: 8bf5dc9773964edd8098510d2379c838
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692364780109
+status: 3
+tags: []
+user_id: anis

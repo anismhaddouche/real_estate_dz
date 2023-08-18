@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/367320885122012114/45603d09e1cf43fdac6cd6e3acfe9855/artifacts
+end_time: 1692364771665
+entry_point_name: ''
+experiment_id: '367320885122012114'
+lifecycle_stage: active
+run_id: 45603d09e1cf43fdac6cd6e3acfe9855
+run_name: victorious-bass-54
+run_uuid: 45603d09e1cf43fdac6cd6e3acfe9855
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692364766251
+status: 3
+tags: []
+user_id: anis

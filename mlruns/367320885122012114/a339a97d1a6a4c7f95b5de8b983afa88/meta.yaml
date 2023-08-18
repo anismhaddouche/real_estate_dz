@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/367320885122012114/a339a97d1a6a4c7f95b5de8b983afa88/artifacts
+end_time: 1692364470933
+entry_point_name: ''
+experiment_id: '367320885122012114'
+lifecycle_stage: active
+run_id: a339a97d1a6a4c7f95b5de8b983afa88
+run_name: caring-cub-884
+run_uuid: a339a97d1a6a4c7f95b5de8b983afa88
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692364466941
+status: 3
+tags: []
+user_id: anis

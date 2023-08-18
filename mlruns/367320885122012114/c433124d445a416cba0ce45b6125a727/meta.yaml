@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/367320885122012114/c433124d445a416cba0ce45b6125a727/artifacts
+end_time: 1692365077762
+entry_point_name: ''
+experiment_id: '367320885122012114'
+lifecycle_stage: active
+run_id: c433124d445a416cba0ce45b6125a727
+run_name: stately-smelt-451
+run_uuid: c433124d445a416cba0ce45b6125a727
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692365073502
+status: 3
+tags: []
+user_id: anis

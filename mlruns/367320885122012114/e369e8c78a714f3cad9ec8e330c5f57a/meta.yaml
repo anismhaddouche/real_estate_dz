@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/367320885122012114/e369e8c78a714f3cad9ec8e330c5f57a/artifacts
+end_time: 1692364539709
+entry_point_name: ''
+experiment_id: '367320885122012114'
+lifecycle_stage: active
+run_id: e369e8c78a714f3cad9ec8e330c5f57a
+run_name: luxuriant-mink-732
+run_uuid: e369e8c78a714f3cad9ec8e330c5f57a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692364537778
+status: 3
+tags: []
+user_id: anis
