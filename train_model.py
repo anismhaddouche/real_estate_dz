@@ -198,7 +198,11 @@ def train_best_model(
         with open("models/preprocessor.b", "wb") as f_out:
             pickle.dump(dv, f_out)
             
-        mlflow.log_artifact("models/preprocessor.b", artifact_path="preprocessor")
+        
+        # mlflow.log_artifact("models/DictVectorizer.b", artifact_path="preprocessor")
+        
+        # with open ('models/xgboost.bin', 'wb') as f_out:
+        #         pickle.dump ((dv, booster), f_out)
 
         mlflow.xgboost.log_model(booster, artifact_path="models_mlflow")
     return None
