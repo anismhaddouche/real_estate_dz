@@ -21,4 +21,4 @@ COPY ["predict.py","xgboost.bin","DictVectorizer.b","./"]
 EXPOSE  9096 
 
 # Say to docker what to RUN 
-ENTRYPOINT [ "gunicorn","--bind=localhost:9096","predict:app" ]
+ENTRYPOINT [ "gunicorn","--bind=0.0.0.0:9096","predict:app" ]
