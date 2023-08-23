@@ -46,5 +46,7 @@ suivre ce lien pour faire des prédiction https://github.com/DataTalksClub/mlops
   * prendre les version de sklearn (xgboost aussi ? ) de la ou j'ai entrainer le modéle 
   * créer une fonction predict qui charge le model fait du feature engineering si besoin et retourn la prediction 
 
-
+## Credentials :
+* Grafana : admin, admin 
+* adminer : postgres, example
 <!-- docker run -it  --rm -p 9096:9096  mlopszoomcamp_2023_project:v1 -->

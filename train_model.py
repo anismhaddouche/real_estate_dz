@@ -68,7 +68,8 @@ def feature_engineering(path_cleaned_data = Path("data/1_cleaned_data.parquet"))
             data.loc[outliers, feature] = replace_with
         else:
             data = data[~outliers]
-
+            
+    data.sort_values(by="createdAt", ascending=True,inplace=True)
     return data 
 
 
@@ -91,6 +92,7 @@ def prepare_data(data : pd.DataFrame ) ->   (scipy.sparse._csr.csr_matrix,  scip
     # Split the DataFrame into training and validation
     df_train = data[:num_rows_train]
     df_val = data[num_rows_train:]
+    df_val.to_parquet('data/reference_data.parquet')
 
     categorical  = ["category",	"commune"]
     numerical = ["location_duree",	"superficie",	"pieces",	"etages"]
@@ -102,7 +104,7 @@ def prepare_data(data : pd.DataFrame ) ->   (scipy.sparse._csr.csr_matrix,  scip
     val_dicts = df_val[categorical + numerical].to_dict(orient='records')
     X_val = dv.transform(val_dicts)
     y_train = df_train["price"].values
-    y_val = df_val["price"].values    
+    y_val = df_val["price"].values   
     return X_train, X_val, y_train, y_val, dv
 
 
@@ -213,7 +215,7 @@ def main_flow() -> None:
     """The main training pipeline"""
 
     # MLflow settings
-    # mlflow.set_tracking_uri("sqlite:///mlflow.db")
+    mlflow.set_tracking_uri("sqlite:///mlflow.db")
     mlflow.set_experiment("project-train-best-model-experiment")
     # Prepare data 
     data = feature_engineering(path_cleaned_data = Path("data/1_cleaned_data.parquet")) 
@@ -222,7 +224,7 @@ def main_flow() -> None:
     best_params = found_best_model(X_train, X_val, y_train, y_val)
     best_params["max_depth"] = int(best_params["max_depth"])
 
-    # Train the best model
+    # # Train the best model
     train_best_model(X_train, X_val, y_train, y_val, dv, best_params)
 
 
