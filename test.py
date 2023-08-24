@@ -10,7 +10,7 @@ data_to_predict =   {
     "category": 'Appartement'
 }
 
-url = "http://localhost:9096/predict"
+url = "http://localhost:9696/predict"
 response = requests.post(url, json=data_to_predict)
 result = response.json()
 
