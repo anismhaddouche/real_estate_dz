@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/e44b131ac5184a07b02fcad38d0fcf0b/artifacts
+end_time: 1692879293097
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: e44b131ac5184a07b02fcad38d0fcf0b
+run_name: redolent-dog-423
+run_uuid: e44b131ac5184a07b02fcad38d0fcf0b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692879264338
+status: 3
+tags: []
+user_id: anis

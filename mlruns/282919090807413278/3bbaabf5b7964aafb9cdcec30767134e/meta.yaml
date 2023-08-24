@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/3bbaabf5b7964aafb9cdcec30767134e/artifacts
+end_time: 1692878759165
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: 3bbaabf5b7964aafb9cdcec30767134e
+run_name: bold-worm-487
+run_uuid: 3bbaabf5b7964aafb9cdcec30767134e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692878738168
+status: 3
+tags: []
+user_id: anis

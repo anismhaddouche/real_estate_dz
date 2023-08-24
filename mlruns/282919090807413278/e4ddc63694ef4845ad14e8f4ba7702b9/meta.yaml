@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/e4ddc63694ef4845ad14e8f4ba7702b9/artifacts
+end_time: 1692879035295
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: e4ddc63694ef4845ad14e8f4ba7702b9
+run_name: traveling-stork-741
+run_uuid: e4ddc63694ef4845ad14e8f4ba7702b9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692879034887
+status: 3
+tags: []
+user_id: anis

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/612888ae4cb6430588eab2e4fd1fef5b/artifacts
+end_time: 1692879333352
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: 612888ae4cb6430588eab2e4fd1fef5b
+run_name: dazzling-mink-164
+run_uuid: 612888ae4cb6430588eab2e4fd1fef5b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692879328963
+status: 3
+tags: []
+user_id: anis

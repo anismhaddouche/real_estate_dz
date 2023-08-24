@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/b1734fa323e3441e8b578d3086d590fd/artifacts
+end_time: 1692879083074
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: b1734fa323e3441e8b578d3086d590fd
+run_name: peaceful-dog-371
+run_uuid: b1734fa323e3441e8b578d3086d590fd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692879080080
+status: 3
+tags: []
+user_id: anis

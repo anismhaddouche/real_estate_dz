@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/23e4e707ad7f45b1a7ca2fe13162df02/artifacts
+end_time: 1692879244380
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: 23e4e707ad7f45b1a7ca2fe13162df02
+run_name: chill-asp-730
+run_uuid: 23e4e707ad7f45b1a7ca2fe13162df02
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692879243973
+status: 3
+tags: []
+user_id: anis

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/b632317d5a9140ff9c82bca17800ddd8/artifacts
+end_time: 1692878693849
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: b632317d5a9140ff9c82bca17800ddd8
+run_name: loud-ox-408
+run_uuid: b632317d5a9140ff9c82bca17800ddd8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692878642994
+status: 3
+tags: []
+user_id: anis

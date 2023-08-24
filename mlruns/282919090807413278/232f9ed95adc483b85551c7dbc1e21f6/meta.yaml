@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/232f9ed95adc483b85551c7dbc1e21f6/artifacts
+end_time: 1692879182906
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: 232f9ed95adc483b85551c7dbc1e21f6
+run_name: polite-koi-915
+run_uuid: 232f9ed95adc483b85551c7dbc1e21f6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692879166646
+status: 3
+tags: []
+user_id: anis

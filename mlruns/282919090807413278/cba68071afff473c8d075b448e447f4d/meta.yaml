@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/cba68071afff473c8d075b448e447f4d/artifacts
+end_time: 1692879004150
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: cba68071afff473c8d075b448e447f4d
+run_name: defiant-perch-113
+run_uuid: cba68071afff473c8d075b448e447f4d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692879003403
+status: 3
+tags: []
+user_id: anis

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/f5a96428d4ca4ff7a7ad57dd5d6e3324/artifacts
+end_time: 1692878766352
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: f5a96428d4ca4ff7a7ad57dd5d6e3324
+run_name: blushing-ant-468
+run_uuid: f5a96428d4ca4ff7a7ad57dd5d6e3324
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692878764463
+status: 3
+tags: []
+user_id: anis

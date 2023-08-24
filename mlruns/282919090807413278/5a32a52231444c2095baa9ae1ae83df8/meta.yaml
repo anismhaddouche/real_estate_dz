@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/5a32a52231444c2095baa9ae1ae83df8/artifacts
+end_time: 1692879034870
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: 5a32a52231444c2095baa9ae1ae83df8
+run_name: inquisitive-goat-782
+run_uuid: 5a32a52231444c2095baa9ae1ae83df8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692879030332
+status: 3
+tags: []
+user_id: anis

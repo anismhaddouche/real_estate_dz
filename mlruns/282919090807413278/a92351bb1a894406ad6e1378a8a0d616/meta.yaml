@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/a92351bb1a894406ad6e1378a8a0d616/artifacts
+end_time: 1692879306018
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: a92351bb1a894406ad6e1378a8a0d616
+run_name: bedecked-sow-455
+run_uuid: a92351bb1a894406ad6e1378a8a0d616
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692879298668
+status: 3
+tags: []
+user_id: anis

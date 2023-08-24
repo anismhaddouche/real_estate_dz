@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/33d806b3a41d4e11b05cb9a00bee6a4f/artifacts
+end_time: 1692879006835
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: 33d806b3a41d4e11b05cb9a00bee6a4f
+run_name: painted-calf-464
+run_uuid: 33d806b3a41d4e11b05cb9a00bee6a4f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692879004161
+status: 3
+tags: []
+user_id: anis

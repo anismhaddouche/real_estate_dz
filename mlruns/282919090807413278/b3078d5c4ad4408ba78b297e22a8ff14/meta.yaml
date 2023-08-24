@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/b3078d5c4ad4408ba78b297e22a8ff14/artifacts
+end_time: 1692878613483
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: b3078d5c4ad4408ba78b297e22a8ff14
+run_name: welcoming-asp-211
+run_uuid: b3078d5c4ad4408ba78b297e22a8ff14
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692878567495
+status: 3
+tags: []
+user_id: anis

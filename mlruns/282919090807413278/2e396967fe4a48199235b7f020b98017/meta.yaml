@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/2e396967fe4a48199235b7f020b98017/artifacts
+end_time: 1692878946486
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: 2e396967fe4a48199235b7f020b98017
+run_name: rogue-carp-16
+run_uuid: 2e396967fe4a48199235b7f020b98017
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692878893850
+status: 3
+tags: []
+user_id: anis

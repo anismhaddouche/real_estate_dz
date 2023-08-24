@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/091a7b2b78de4fa686e88365c1ebd172/artifacts
+end_time: 1692879050516
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: 091a7b2b78de4fa686e88365c1ebd172
+run_name: upset-snake-755
+run_uuid: 091a7b2b78de4fa686e88365c1ebd172
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692879035308
+status: 3
+tags: []
+user_id: anis

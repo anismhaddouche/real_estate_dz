@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/ad270b77126e4bb7ae178c399e0af4cd/artifacts
+end_time: 1692879084682
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: ad270b77126e4bb7ae178c399e0af4cd
+run_name: righteous-cow-157
+run_uuid: ad270b77126e4bb7ae178c399e0af4cd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692879083089
+status: 3
+tags: []
+user_id: anis

@@ -17,14 +17,24 @@ from evidently.metrics import ColumnDriftMetric, DatasetDriftMetric, DatasetMiss
 # logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s]: %(message)s")
 
 SEND_TIMEOUT = 10
+EXPERIMENT_NAME = "project-train-best-model-experiment"   
+
+# create_table_statement = """
+# drop table if exists dummy_metrics;
+# create table dummy_metrics(
+# 	timestamp timestamp,
+# 	prediction_drift float,
+# 	num_drifted_columns integer,
+# 	share_missing_values float
+# )
+# """
 
 create_table_statement = """
-drop table if exists dummy_metrics;
-create table dummy_metrics(
-	timestamp timestamp,
-	prediction_drift float,
-	num_drifted_columns integer,
-	share_missing_values float
+create table if not exists dummy_metrics(
+    timestamp timestamp,
+    prediction_drift float,
+    num_drifted_columns integer,
+    share_missing_values float
 )
 """
 
@@ -45,11 +55,22 @@ report = Report(metrics = [
     DatasetMissingValuesMetric()
 ])
 
-# Get predictions of the reference data 
-with open (Path("models/DictVectorizer.b"), "rb") as f_in:
-    dv = pickle.load(f_in)
-with open(Path("models/xgboost.bin"), "rb") as f_in:
-    model =  pickle.load(f_in)
+
+
+def load_best_model_dictvec(experiment_name : str):
+    """ Load the best model which is saved as in artifacts/models_mlflow""" 
+    experiment = mlflow.get_experiment_by_name(experiment_name)
+    EXPERIMENT_ID = experiment.experiment_id
+    df = mlflow.search_runs([EXPERIMENT_ID], order_by=["metrics.rmse"])
+    RUN_ID  = df[df["tags.mlflow.log-model.history"].notna()]['run_id'].values[0]
+    best_model = f'runs:/{RUN_ID}/models_mlflow'
+    with open(f"mlruns/{EXPERIMENT_ID}/{RUN_ID}/artifacts/preprocessor/DictVectorizer.b","rb") as f_in:
+       dv = pickle.load(f_in)
+    print(f"Loading the model of run  = {RUN_ID}")
+    return dv, mlflow.pyfunc.load_model(best_model)
+
+dv, model = load_best_model_dictvec(EXPERIMENT_NAME)
+
 
 @task
 def prep_db():
@@ -66,45 +87,28 @@ def prep_data(model,dv) -> (pd.DataFrame,pd.DataFrame):
     data['createdAt'] = data['createdAt'].dt.tz_localize(None)
     data = data.reset_index(drop=True)
     data.sort_values(by="createdAt", ascending=True,inplace=True)
-    
     total_rows = len(data)
     num_rows_first_df = int(total_rows * 0.8)
     num_rows_second_df = total_rows - num_rows_first_df
-
-
     X = data[num_features+cat_features]
     X = X.to_dict('records')
-
-
-
     data['price_pred'] = model.predict(dv.transform(X))
-
     reference_data = data.head(num_rows_first_df)
     raw_data = data.drop('price_pred',axis = 1).tail(num_rows_second_df)
-
-    # raw_data.sort_values(by="createdAt", ascending=True,inplace=True)
-    # reference_data.sort_values(by="createdAt", ascending=True,inplace=True)
     return raw_data, reference_data 
  
  
-@task    
+@task(log_prints=False)
 def calculate_metrics_postgresql(curr, current_data, reference_data):
-    # Calcul du nombre total de mini DataFrames nécessaires
-    # current_data = raw_data.iloc[start_index:end_index]
-    # Initialiser les variables
     X = current_data[num_features+cat_features]
     X = X.to_dict('records')
     current_data['price_pred'] = model.predict(dv.transform(X))
-
     report.run(reference_data = reference_data, current_data = current_data,
     column_mapping=column_mapping)
     result = report.as_dict()
     prediction_drift = result['metrics'][0]['result']['drift_score']
     num_drifted_columns = result['metrics'][1]['result']['number_of_drifted_columns']
     share_missing_values = result['metrics'][2]['result']['current']['share_of_missing_values']
-    # print(current_data["createdAt"].max(), prediction_drift,num_drifted_columns,share_missing_values)
-    # Insert metrics to the database
-    
     try:
         
         curr.execute(
@@ -122,7 +126,6 @@ def calculate_metrics_postgresql(curr, current_data, reference_data):
 
 @flow()
 def batch_monitoring_backfill(batch_size :int)-> None:
-    
     logger = get_run_logger() 
     prep_db()
     raw_data, reference_data = prep_data(model,dv)
@@ -130,7 +133,6 @@ def batch_monitoring_backfill(batch_size :int)-> None:
 	# Initialiser les variables
     start_index = 0
     end_index = 0
-    
     last_send = datetime.datetime.now() - datetime.timedelta(seconds=10)
     with psycopg.connect("host=localhost port=5432 dbname=test user=postgres password=example", autocommit=True) as conn:
         for i in range(num_batches):
@@ -139,7 +141,6 @@ def batch_monitoring_backfill(batch_size :int)-> None:
             with conn.cursor() as curr:
                 calculate_metrics_postgresql(curr, current_data, reference_data)
             start_index = end_index
-
             new_send = datetime.datetime.now()
             seconds_elapsed = (new_send - last_send).total_seconds()
             if seconds_elapsed < SEND_TIMEOUT:
@@ -149,5 +150,7 @@ def batch_monitoring_backfill(batch_size :int)-> None:
             logger.info(f"data of the batch {i}/{num_batches} was sent")
 
 
+
+
 if __name__ == "__main__":
-    batch_monitoring_backfill(batch_size = 10)
+    batch_monitoring_backfill(batch_size = 50)

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/db7b44e799464d2991fecd553deebc7f/artifacts
+end_time: 1692878817271
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: db7b44e799464d2991fecd553deebc7f
+run_name: stately-sheep-654
+run_uuid: db7b44e799464d2991fecd553deebc7f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692878766364
+status: 3
+tags: []
+user_id: anis

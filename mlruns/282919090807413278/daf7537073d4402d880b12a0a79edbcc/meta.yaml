@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/daf7537073d4402d880b12a0a79edbcc/artifacts
+end_time: 1692878849840
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: daf7537073d4402d880b12a0a79edbcc
+run_name: youthful-gnu-871
+run_uuid: daf7537073d4402d880b12a0a79edbcc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692878826904
+status: 3
+tags: []
+user_id: anis

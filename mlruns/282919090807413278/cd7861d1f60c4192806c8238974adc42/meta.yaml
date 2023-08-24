@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/cd7861d1f60c4192806c8238974adc42/artifacts
+end_time: 1692878987232
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: cd7861d1f60c4192806c8238974adc42
+run_name: sincere-horse-105
+run_uuid: cd7861d1f60c4192806c8238974adc42
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692878981011
+status: 3
+tags: []
+user_id: anis

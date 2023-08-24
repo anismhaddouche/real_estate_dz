@@ -126,8 +126,8 @@ def objective(params,train,valid,y_val):
         y_pred = booster.predict(valid)
         rmse = mean_squared_error(y_val, y_pred, squared=False)
         mape = mean_absolute_percentage_error(y_val,y_pred)
-        mlflow.log_metric("rmse", rmse)
         mlflow.log_metric("mape", mape)
+        mlflow.log_metric("rmse", rmse)
 
     return {'loss': rmse, "mape" : mape, 'status': STATUS_OK}
 
@@ -149,16 +149,12 @@ def found_best_model(X_train:scipy.sparse._csr.csr_matrix, X_val:scipy.sparse._c
                         'min_child_weight': hp.loguniform('min_child_weight', -10, 3),
                         'objective': 'reg:squarederror',
                         'seed': 42
+                        ,
+                        'colsample_bytree': hp.uniform('colsample_bytree', 0.6, 1.0),  # Ajouter colsample_bytree
+                        'gamma': hp.loguniform('gamma', -5, 1),                        # Ajouter gamma
                         }
-    #     search_space = {
-    #     'max_depth': scope.int(hp.quniform('max_depth', 2, 200, 1)),
-    #     'learning_rate': hp.loguniform('learning_rate', -3, 0),
-    #     'reg_alpha': hp.loguniform('reg_alpha', -5, -1),
-    #     'reg_lambda': hp.loguniform('reg_lambda', -6, -1),
-    #     'min_child_weight': hp.loguniform('min_child_weight', -1, 3),
-    #     'objective': 'reg:squarederror',
-    #     'seed': 42
-    # }
+ 
+   
 
 
 # Saving best results  
@@ -181,6 +177,7 @@ def train_best_model(
     train = xgb.DMatrix(X_train, label=y_train)
     valid = xgb.DMatrix(X_val, label=y_val)
     with mlflow.start_run():
+        
 
         mlflow.log_params(best_params)
         booster = xgb.train(
@@ -194,19 +191,23 @@ def train_best_model(
         y_pred = booster.predict(valid)
         rmse = mean_squared_error(y_val, y_pred, squared=False)
         mlflow.log_metric("rmse", rmse)
+        mape = mean_absolute_percentage_error(y_val,y_pred)
+        mlflow.log_metric("mape", mape)
 
         
         Path("models").mkdir(exist_ok=True)
-        with open("models/preprocessor.b", "wb") as f_out:
+        with open("models/DictVectorizer.b", "wb") as f_out:
             pickle.dump(dv, f_out)
             
-        
-        # mlflow.log_artifact("models/DictVectorizer.b", artifact_path="preprocessor")
-        
         # with open ('models/xgboost.bin', 'wb') as f_out:
-        #         pickle.dump ((dv, booster), f_out)
-
+        #     pickle.dump ( booster, f_out)
+        mlflow.log_artifact("models/DictVectorizer.b", artifact_path="preprocessor")
         mlflow.xgboost.log_model(booster, artifact_path="models_mlflow")
+
+       # The commented code is saving the trained DictVectorizer object (`dv`) and the trained XGBoost
+       # model (`booster`) as binary files using the pickle module.
+        
+
     return None
 
 
@@ -215,7 +216,7 @@ def main_flow() -> None:
     """The main training pipeline"""
 
     # MLflow settings
-    mlflow.set_tracking_uri("sqlite:///mlflow.db")
+    # mlflow.set_tracking_uri("sqlite:///mlflow.db")
     mlflow.set_experiment("project-train-best-model-experiment")
     # Prepare data 
     data = feature_engineering(path_cleaned_data = Path("data/1_cleaned_data.parquet")) 

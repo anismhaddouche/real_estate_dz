@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/df369b326fe0492c947cf83400d1e90c/artifacts
+end_time: 1692879007845
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: df369b326fe0492c947cf83400d1e90c
+run_name: chill-kit-970
+run_uuid: df369b326fe0492c947cf83400d1e90c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692879006850
+status: 3
+tags: []
+user_id: anis

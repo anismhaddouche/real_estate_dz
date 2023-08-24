@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/f65297524ddb414da64950af9725223b/artifacts
+end_time: 1692879234208
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: f65297524ddb414da64950af9725223b
+run_name: blushing-goat-904
+run_uuid: f65297524ddb414da64950af9725223b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692879182920
+status: 3
+tags: []
+user_id: anis

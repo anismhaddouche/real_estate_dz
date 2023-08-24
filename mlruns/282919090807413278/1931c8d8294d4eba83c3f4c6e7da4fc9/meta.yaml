@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/1931c8d8294d4eba83c3f4c6e7da4fc9/artifacts
+end_time: 1692878641650
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: 1931c8d8294d4eba83c3f4c6e7da4fc9
+run_name: nebulous-fly-656
+run_uuid: 1931c8d8294d4eba83c3f4c6e7da4fc9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692878613505
+status: 3
+tags: []
+user_id: anis

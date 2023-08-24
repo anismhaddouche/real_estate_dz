@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/9d10233137594e19b1020c2a59b9ed36/artifacts
+end_time: 1692878822987
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: 9d10233137594e19b1020c2a59b9ed36
+run_name: respected-finch-917
+run_uuid: 9d10233137594e19b1020c2a59b9ed36
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692878817312
+status: 3
+tags: []
+user_id: anis

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/9e5f894b50f24732a92c30fdf8d74e34/artifacts
+end_time: 1692879009642
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: 9e5f894b50f24732a92c30fdf8d74e34
+run_name: lyrical-croc-899
+run_uuid: 9e5f894b50f24732a92c30fdf8d74e34
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692879007855
+status: 3
+tags: []
+user_id: anis

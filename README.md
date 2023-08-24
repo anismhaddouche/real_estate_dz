@@ -34,8 +34,11 @@ we may improve the model by adding other variables
         - demander à adel de mettre une description plus claire 
     """
 ## TODO : 
-Créer un dashboard 
-suivre ce lien pour faire des prédiction https://github.com/DataTalksClub/mlops-zoomcamp/blob/main/04-deployment/batch/score.ipynb`
+
+refaire l'app avec streamlit et la deployer local aprés contenneur
+mettre le conteneur dans docker-compose et le connecter avec graphana
+créer un dashboard pour un overview sur les données 
+créer un script pour fetcher les données 
 
 ### Etapes de deployement 
 * créer le modéle 

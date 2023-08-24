@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/536771345355438c88a0d8c73df9a850/artifacts
+end_time: 1692879166595
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: 536771345355438c88a0d8c73df9a850
+run_name: silent-wolf-491
+run_uuid: 536771345355438c88a0d8c73df9a850
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692879084709
+status: 3
+tags: []
+user_id: anis

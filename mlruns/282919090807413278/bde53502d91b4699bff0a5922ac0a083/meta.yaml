@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/anis/Desktop/mlopszoomcamp_2023_project/mlruns/282919090807413278/bde53502d91b4699bff0a5922ac0a083/artifacts
+end_time: 1692878545954
+entry_point_name: ''
+experiment_id: '282919090807413278'
+lifecycle_stage: active
+run_id: bde53502d91b4699bff0a5922ac0a083
+run_name: delightful-snipe-172
+run_uuid: bde53502d91b4699bff0a5922ac0a083
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1692878507092
+status: 3
+tags: []
+user_id: anis
