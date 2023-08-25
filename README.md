@@ -34,20 +34,10 @@ we may improve the model by adding other variables
         - demander à adel de mettre une description plus claire 
     """
 ## TODO : 
+Améliorer l'application  : par exemple pour local il n'a pas de nombre de chambre
+gérer les conflit de version affichées dans le message d'erreur de l'application (mlflow)
 
-refaire l'app avec streamlit et la deployer local aprés contenneur
-mettre le conteneur dans docker-compose et le connecter avec graphana
-créer un dashboard pour un overview sur les données 
-créer un script pour fetcher les données 
 
-### Etapes de deployement 
-* créer le modéle 
-* le mettre dans une application flask 
-* Packager le tout sur docker 
-* étapes en détails:
-  * cérer un ev virtuelle avec pipevn dans  un nouveau dossier appeler deployement 
-  * prendre les version de sklearn (xgboost aussi ? ) de la ou j'ai entrainer le modéle 
-  * créer une fonction predict qui charge le model fait du feature engineering si besoin et retourn la prediction 
 
 ## Credentials :
 * Grafana : admin, admin 
