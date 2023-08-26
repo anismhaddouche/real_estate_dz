@@ -1,16 +1,15 @@
 import streamlit as st
 import pandas as pd
 import mlflow
-import xgboost as xgb
 import pickle
 
 
-with open(f"preprocessor/DictVectorizer.b", "rb") as f_in:
+with open("preprocessor/DictVectorizer.b", "rb") as f_in:
     dv = pickle.load(f_in)
 model = mlflow.pyfunc.load_model("models_mlflow")
 
 
-# Chargement du DataFrame cleaned_data contenant les valeurs possibles pour les variables catégorielles
+# Chargement du DataFrame cleaned_data
 cleaned_data = pd.read_parquet(
     "1_cleaned_data.parquet"
 )  # Remplacez par le chemin correct

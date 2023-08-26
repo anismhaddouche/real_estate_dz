@@ -15,7 +15,6 @@ from evidently.metrics import (
     DatasetMissingValuesMetric,
 )
 
-# logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s]: %(message)s")
 
 SEND_TIMEOUT = 10
 EXPERIMENT_NAME = "project-train-best-model-experiment"

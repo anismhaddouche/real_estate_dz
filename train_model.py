@@ -1,16 +1,17 @@
-import pandas as pd
-from prefect import task, flow
-from pathlib import Path
 import pickle
-import numpy as np
-import sklearn
-from sklearn.feature_extraction import DictVectorizer
-from sklearn.metrics import mean_squared_error, mean_absolute_percentage_error
+from pathlib import Path
+
 import mlflow
-import xgboost as xgb
-from hyperopt import fmin, tpe, hp, STATUS_OK, Trials
-from hyperopt.pyll import scope
+import numpy as np
+import pandas as pd
 import scipy
+import sklearn
+import xgboost as xgb
+from hyperopt import STATUS_OK, Trials, fmin, hp, tpe
+from hyperopt.pyll import scope
+from prefect import flow, task
+from sklearn.feature_extraction import DictVectorizer
+from sklearn.metrics import mean_absolute_percentage_error, mean_squared_error
 
 
 @task
@@ -117,7 +118,7 @@ def prepare_data(
 
 def objective(params, train, valid, y_val):
     """
-    Create an objectif function for hyperopt in ordre to found best xgboost hyperparameters
+    Create an objectif func for hypt in ordre to found best hyperparameters
     """
     with mlflow.start_run():
         mlflow.set_tag("model", "xgboost")
@@ -216,7 +217,7 @@ def train_best_model(
         )
         mlflow.xgboost.log_model(booster, artifact_path="models_mlflow")
 
-    # The commented code is saving the trained DictVectorizer object (`dv`) and the trained XGBoost
+    # this code is saving the  object (`dv`) and the trained XGBoost
     # model (`booster`) as binary files using the pickle module.
 
     return None
