@@ -4,7 +4,6 @@ import pandas as pd
 import json
 
 
-
 def get_commune(x: list):
     """get the commune column"""
     # x = list_to_dict(x)
@@ -54,7 +53,7 @@ def get_specs(column: pd.Series) -> pd.DataFrame:
     # Loop on all rows
     for index, _ in column.items():
         specs_raw = {}
-        if column.loc[index] != None :
+        if column.loc[index] != None:
             for i, spec in enumerate(column.loc[index]):
                 label = spec["specification"]["codename"]
                 try:
@@ -83,13 +82,16 @@ def clean_id(id: pd.Series) -> pd.Series:
     """convert the id to int"""
     return id.astype("int")
 
+
 def clean_category(category: pd.Series) -> pd.Series:
     """Convert to a categorical type"""
     return category.astype("category")
 
+
 def clean_createdAt(createdAt: pd.Series) -> pd.Series:
     """Convert to a datetime type"""
     return pd.to_datetime(createdAt)
+
 
 def clean_slug(slug: pd.Series) -> pd.Series:
     """Convert to a string type"""
@@ -105,6 +107,7 @@ def clean_commune(commune: pd.Series) -> pd.Series:
     """Convert to a string type"""
     return commune.astype("category")
 
+
 def clean_location_duree(location_duree: pd.Series) -> pd.Series:
     """Convert to a int"""
     return location_duree.str.extract("(\\d)").astype("Int64")
@@ -114,39 +117,51 @@ def clean_superficie(superficie: pd.Series) -> pd.Series:
     """Convert to int ...."""
     return superficie.str.extract("(\\d+)").astype("Int64")
 
+
 def clean_pieces(pieces: pd.Series) -> pd.Series:
     """Convert to int and ..."""
     return pieces.str.extract("(\\d{1,2})").astype("Int64")
 
-def clean_asset_in_a_promotional_site(asset_in_a_promotional_site: pd.Series) -> pd.Series:
+
+def clean_asset_in_a_promotional_site(
+    asset_in_a_promotional_site: pd.Series,
+) -> pd.Series:
     """Convert to a bool type"""
     return asset_in_a_promotional_site.astype("bool")
 
 
-def clean_property_specifications(property_specifications: pd.Series) -> pd.Series:
-    """ staff"""
-    #TODO : amelioration amelioration by converting to bool
+def clean_property_specifications(
+    property_specifications: pd.Series,
+) -> pd.Series:
+    """staff"""
+    # TODO : amelioration amelioration by converting to bool
     return property_specifications.astype("category")
 
-def clean_papers(papers: pd.Series) ->  pd.Series:
-    """ desc"""
-    #TODO : amelioration by converting to bool
+
+def clean_papers(papers: pd.Series) -> pd.Series:
+    """desc"""
+    # TODO : amelioration by converting to bool
     return papers.astype("category")
 
+
 def clean_etages(etages: pd.Series) -> pd.Series:
-    """Convert to integer and keep only digits """
-    #TODO: prendre en compte RDC
+    """Convert to integer and keep only digits"""
+    # TODO: prendre en compte RDC
     return etages.str.extract("(\\d{1,2})").astype("Int64")
 
 
-def clean_sale_by_real_estate_agent(sale_by_real_estate_agent: pd.Series) -> pd.Series:
-    """" Convert to a bool type """
+def clean_sale_by_real_estate_agent(
+    sale_by_real_estate_agent: pd.Series,
+) -> pd.Series:
+    """ " Convert to a bool type"""
     return sale_by_real_estate_agent.astype("bool")
 
 
-def clean_property_payment_conditions(clean_property_payment_conditions: pd.Series) -> pd.Series:
-    """desc """
-    return clean_property_payment_conditions.astype('category')
+def clean_property_payment_conditions(
+    clean_property_payment_conditions: pd.Series,
+) -> pd.Series:
+    """desc"""
+    return clean_property_payment_conditions.astype("category")
 
 
 def clean_medias(medias: pd.Series) -> pd.Series:
@@ -157,13 +172,14 @@ def clean_medias(medias: pd.Series) -> pd.Series:
 def clean_description(description: pd.Series) -> pd.Series:
     return description.astype("string")
 
+
 def clean_price(price: pd.Series) -> pd.Series:
     # return price.astype("int")
     return price
 
 
 @flow()
-def clean_data(raw_data_path = Path("data/0_raw_data.json")) -> pd.DataFrame:
+def clean_data(raw_data_path=Path("data/0_raw_data.json")) -> pd.DataFrame:
     """Preprocesses the data of announcements.
 
     Args:
@@ -173,7 +189,7 @@ def clean_data(raw_data_path = Path("data/0_raw_data.json")) -> pd.DataFrame:
 
     """
     # Convert Data, which is a list of lists, into one flatten list
-    with open(raw_data_path, 'r') as json_file:
+    with open(raw_data_path, "r") as json_file:
         raw_data = json.load(json_file)
 
     data = pd.DataFrame([item for sublist in raw_data for item in sublist])
@@ -184,7 +200,9 @@ def clean_data(raw_data_path = Path("data/0_raw_data.json")) -> pd.DataFrame:
     # Get the wilaya
     wilaya = data["cities"].apply(lambda x: get_wilaya(x)).rename("wilaya")
     # Get the Store name
-    store = data["store"].apply(lambda x: x.get("slug") if x is not None else None)
+    store = data["store"].apply(
+        lambda x: x.get("slug") if x is not None else None
+    )
     # Get medias (urls)
     medias = get_medias(data["medias"])
     # Get some specification in a DataFrame
@@ -209,7 +227,7 @@ def clean_data(raw_data_path = Path("data/0_raw_data.json")) -> pd.DataFrame:
         ]
     ).T
     data = df.join(specs)
-    
+
     jobs = {
         "priceType": clean_priceType,
         "priceUnit": clean_priceUnit,
@@ -226,12 +244,11 @@ def clean_data(raw_data_path = Path("data/0_raw_data.json")) -> pd.DataFrame:
         "property-specifications": clean_property_specifications,
         "papers": clean_papers,
         "etages": clean_etages,
-        "sale-by-real-estate-agent":clean_sale_by_real_estate_agent,
+        "sale-by-real-estate-agent": clean_sale_by_real_estate_agent,
         "property-payment-conditions": clean_property_payment_conditions,
         "medias": clean_medias,
-        "description":clean_description,
-        "price":clean_price
-
+        "description": clean_description,
+        "price": clean_price,
     }
 
     for column, func in jobs.items():
@@ -240,16 +257,13 @@ def clean_data(raw_data_path = Path("data/0_raw_data.json")) -> pd.DataFrame:
     return None
 
 
-
 if __name__ == "__main__":
     clean_data()
-    
-    
+
+
 # @flow()
 # def clean_data(raw_data = Path("data/0_raw_data.json")):
-    
-    
-    
-    
+
+
 #     cleaned_data = None
 #     return cleaned_data

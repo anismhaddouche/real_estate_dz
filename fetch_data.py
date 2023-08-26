@@ -67,10 +67,14 @@ def get_data(
     query_last_page = load_query(query_last_page_path)
 
     result_last_page = client.execute(
-        query_last_page, operation_name=operationName, variable_values=def_var_page(1)
+        query_last_page,
+        operation_name=operationName,
+        variable_values=def_var_page(1),
     )
 
-    lastPage = result_last_page["search"]["announcements"]["paginatorInfo"]["lastPage"]
+    lastPage = result_last_page["search"]["announcements"]["paginatorInfo"][
+        "lastPage"
+    ]
 
     query = load_query(query_path)
 
@@ -81,7 +85,9 @@ def get_data(
     # while i <= lastPage:
     while i <= 300:
         result = client.execute(
-            query, operation_name=operationName, variable_values=def_var_page(i)
+            query,
+            operation_name=operationName,
+            variable_values=def_var_page(i),
         )
         datas.append(result["search"]["announcements"]["data"])
         print(">", i, "/", lastPage)
