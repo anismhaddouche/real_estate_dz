@@ -15,7 +15,7 @@ import scipy
 
 
 @task 
-def feature_engineering(path_cleaned_data = Path("data/1_cleaned_data.parquet")) -> pd.DataFrame : 
+def feature_engineering(path_cleaned_data=Path("data/1_cleaned_data.parquet")) -> pd.DataFrame:
     """
     Prepare the data for machines learning models. More precisely: 
         - Choose the target and features

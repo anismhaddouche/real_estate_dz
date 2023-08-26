@@ -8,7 +8,7 @@ import pickle
 from pathlib import Path
 import psycopg
 
-from prefect import task, flow,get_run_logger
+from prefect import task, flow, get_run_logger
 
 from evidently.report import Report
 from evidently import ColumnMapping
@@ -82,7 +82,7 @@ def prep_db():
 			conn.execute(create_table_statement)
  
 @task   
-def prep_data(model,dv) -> (pd.DataFrame,pd.DataFrame):
+def prep_data(model, dv) -> (pd.DataFrame,pd.DataFrame):
     data = pd.read_parquet('data/reference_data.parquet')
     data['createdAt'] = data['createdAt'].dt.tz_localize(None)
     data = data.reset_index(drop=True)
