@@ -41,12 +41,12 @@ services:
       - front-tier
     restart: always
 
-  app_streamlit: 
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8501:8501"
-    networks:
-      - front-tier
-    restart: always 
+  # app_streamlit: 
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "8501:8501"
+  #   networks:
+  #     - front-tier
+  #   restart: always 

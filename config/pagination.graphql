@@ -1,10 +1,10 @@
 query SearchQueryWithoutFilters($q: String, $filter: SearchFilterInput) {
-  search(q: $q, filter: $filter) {
-	announcements {
-	  paginatorInfo {
-		lastPage
-		hasMorePages
-	  }
+search(q: $q, filter: $filter) {
+announcements {
+	paginatorInfo {
+	lastPage
+	hasMorePages
 	}
-  }
+}
+}
 }

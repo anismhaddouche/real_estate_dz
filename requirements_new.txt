@@ -1,0 +1,5 @@
+gql==3.4.1
+prefect==2.11.3
+aiohttp==3.8.5
+psycopg==3.1.10
+psycopg_binary

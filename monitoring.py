@@ -1,20 +1,15 @@
-import mlflow
-import pickle
-import pandas as pd
 import datetime
+import pickle
 import time
+
+import mlflow
+import pandas as pd
 import psycopg
-
-from prefect import task, flow, get_run_logger
-
-from evidently.report import Report
 from evidently import ColumnMapping
-from evidently.metrics import (
-    ColumnDriftMetric,
-    DatasetDriftMetric,
-    DatasetMissingValuesMetric,
-)
-
+from evidently.metrics import (ColumnDriftMetric, DatasetDriftMetric,
+                               DatasetMissingValuesMetric)
+from evidently.report import Report
+from prefect import flow, get_run_logger, task
 
 SEND_TIMEOUT = 10
 EXPERIMENT_NAME = "project-train-best-model-experiment"
@@ -63,9 +58,7 @@ def load_best_model_dictvec(experiment_name: str):
     experiment = mlflow.get_experiment_by_name(experiment_name)
     EXPERIMENT_ID = experiment.experiment_id
     df = mlflow.search_runs([EXPERIMENT_ID], order_by=["metrics.rmse"])
-    RUN_ID = df[df["tags.mlflow.log-model.history"].notna()]["run_id"].values[
-        0
-    ]
+    RUN_ID = df[df["tags.mlflow.log-model.history"].notna()]["run_id"].values[0]
     best_model = f"runs:/{RUN_ID}/models_mlflow"
     with open(
         f"mlruns/{EXPERIMENT_ID}/{RUN_ID}/artifacts/preprocessor/DictVectorizer.b",
@@ -123,15 +116,14 @@ def calculate_metrics_postgresql(curr, current_data, reference_data):
     )
     result = report.as_dict()
     prediction_drift = result["metrics"][0]["result"]["drift_score"]
-    num_drifted_columns = result["metrics"][1]["result"][
-        "number_of_drifted_columns"
-    ]
+    num_drifted_columns = result["metrics"][1]["result"]["number_of_drifted_columns"]
     share_missing_values = result["metrics"][2]["result"]["current"][
         "share_of_missing_values"
     ]
     try:
         curr.execute(
-            "insert into dummy_metrics(timestamp, prediction_drift, num_drifted_columns, share_missing_values) values (%s, %s, %s, %s)",
+            "insert into dummy_metrics(timestamp, prediction_drift,"
+            " num_drifted_columns, share_missing_values) values (%s, %s, %s, %s)",
             (
                 current_data["createdAt"].max(),
                 prediction_drift,
@@ -141,7 +133,8 @@ def calculate_metrics_postgresql(curr, current_data, reference_data):
         )
     except:
         curr.execute(
-            "insert into dummy_metrics(timestamp, prediction_drift, num_drifted_columns, share_missing_values) values (%s, %s, %s, %s)",
+            "insert into dummy_metrics(timestamp, prediction_drift,"
+            " num_drifted_columns, share_missing_values) values (%s, %s, %s, %s)",
             (current_data["createdAt"].max(), None, None, None),
         )
     return None
@@ -165,9 +158,7 @@ def batch_monitoring_backfill(batch_size: int) -> None:
             end_index = start_index + batch_size
             current_data = raw_data.iloc[start_index:end_index]
             with conn.cursor() as curr:
-                calculate_metrics_postgresql(
-                    curr, current_data, reference_data
-                )
+                calculate_metrics_postgresql(curr, current_data, reference_data)
             start_index = end_index
             new_send = datetime.datetime.now()
             seconds_elapsed = (new_send - last_send).total_seconds()

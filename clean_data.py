@@ -1,7 +1,8 @@
-from prefect import task, flow
-from pathlib import Path
-import pandas as pd
 import json
+from pathlib import Path
+
+import pandas as pd
+from prefect import flow
 
 
 def get_commune(x: list):
@@ -9,7 +10,8 @@ def get_commune(x: list):
     # x = list_to_dict(x)
     try:
         commune = x[0]["name"]
-    except:
+    except Exception as e:
+        print(f"thre is an erreur of type {e}")
         commune = None
     return commune
 
@@ -19,7 +21,8 @@ def get_wilaya(x: list):
     # x = list_to_dict(x)
     try:
         wilaya = x[0]["region"]["name"]
-    except:
+    except Exception as e:
+        print(f"thre is an erreur of type {e}")
         wilaya = None
     return wilaya
 
@@ -36,7 +39,8 @@ def get_medias(column: pd.Series) -> pd.Series:
         for _, media in enumerate(column.loc[index]):
             try:
                 media_raw.append(media["mediaUrl"])
-            except:
+            except Exception as e:
+                print(f"thre is an erreur of type {e}")
                 media_raw.append(None)
         media_all.append(media_raw)
     return pd.Series(media_all)
@@ -45,22 +49,24 @@ def get_medias(column: pd.Series) -> pd.Series:
 def get_specs(column: pd.Series) -> pd.DataFrame:
     """
     Extract the following specification from the column "specs" :
-    location_duree, superficie,	pieces,	asset-in-a-promotional-site	property-specifications,
-    papers,	etages	sale-by-real-estate-agent,	property-payment-conditions
+    location_duree, superficie,	pieces,	asset-in-a-promotional-site,
+    property-specification, papers,	etages	sale-by-real-estate-agent,
+    property-payment-conditions
     """
 
     specs_all = []
     # Loop on all rows
     for index, _ in column.items():
         specs_raw = {}
-        if column.loc[index] != None:
+        if column.loc[index] is not None:
             for i, spec in enumerate(column.loc[index]):
                 label = spec["specification"]["codename"]
                 try:
                     value = spec["value"]
                     if len(value) == 1:
                         value = value[0]
-                except:
+                except Exception as e:
+                    print(f"thre is an erreur of type {e}")
                     value = None
                 # TODO: améliorer la prise en charge str(value)
                 specs_raw[label] = str(value)
@@ -170,10 +176,12 @@ def clean_medias(medias: pd.Series) -> pd.Series:
 
 
 def clean_description(description: pd.Series) -> pd.Series:
+    """desc"""
     return description.astype("string")
 
 
 def clean_price(price: pd.Series) -> pd.Series:
+    """desc"""
     # return price.astype("int")
     return price
 
@@ -193,16 +201,15 @@ def clean_data(raw_data_path=Path("data/0_raw_data.json")) -> pd.DataFrame:
         raw_data = json.load(json_file)
 
     data = pd.DataFrame([item for sublist in raw_data for item in sublist])
-    # Convert each raw of 'category', which is a dict (eg : {"name": "Appartement"}), to a sting  (eg :"Appartement")
+    # Convert each raw of 'category', which is a dict
+    # (eg : {"name": "Appartement"}) , to a sting  (eg :"Appartement")
     category = data["category"].apply(lambda x: x["name"])
     # Get the commune
     commune = data["cities"].apply(lambda x: get_commune(x)).rename("commune")
     # Get the wilaya
     wilaya = data["cities"].apply(lambda x: get_wilaya(x)).rename("wilaya")
     # Get the Store name
-    store = data["store"].apply(
-        lambda x: x.get("slug") if x is not None else None
-    )
+    store = data["store"].apply(lambda x: x.get("slug") if x is not None else None)
     # Get medias (urls)
     medias = get_medias(data["medias"])
     # Get some specification in a DataFrame
